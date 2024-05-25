@@ -1,9 +1,3 @@
-html, body{
-  height:100%;
-  margin:0;
-  display: flex;
-  flex-direction: column;
-}
 /* Google Fonts */
 .major-mono display-regular {
   font-family: "Major Mono Display", monospace;
@@ -15,25 +9,61 @@ html, body{
   font-weight: 400;
   font-style: normal;
 }
-
+/* Reset´s */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, p, a, input, textarea{
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
 /* Logo */
 .logo {
   max-width: 100px;
   height: 50px;
   margin: 5px;
 }
-
 /* Marca */
 .navbar-brand {
   font-family: "Major Mono Display", monospace;
 }
-
+.nav-link{
+  cursor: pointer;
+}
 /* Color icono barra de navegación */
 .navbar-nav i:hover {
   color: #67304a;
   cursor: pointer;
 }
-
+main{
+  padding: 20px;
+  justify-content: space-between;
+}
+.container-termos{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.5rem;
+  
+}
+.productoIndividual{  
+  text-align: center; 
+  border: #f3c009 solid 1px;
+  border-radius: 10px;
+  padding: 15px;  
+  box-shadow: 9px 6px 32px -17px rgba(0,0,0,0.55);
+-webkit-box-shadow: 9px 6px 32px -17px rgba(0,0,0,0.55);
+-moz-box-shadow: 9px 6px 32px -17px rgba(0,0,0,0.55);
+}
+.imagen-producto{
+  max-width: 50%;
+}
+.productoIndividual p{
+  text-transform: uppercase;
+}
 /* Titulos */
 .titulos {
   margin-top: 30px;
@@ -52,7 +82,6 @@ html, body{
   font-family: "Parisienne", cursive;
   font-size: 35px;
 }
-
 /* Iconos redes sociales */
 .iconos_redes_footer i {
   color: #262626;
@@ -60,56 +89,55 @@ html, body{
   font-size: 1.2em;
   margin: 5px;
 }
-/* Boton Comprar */
-.card-body a {
-  color: white;
-  background-color: #67304a;
-  border: 1px solid black;
-  padding: 10px 20px;
-  font-weight: bold;
-  overflow: hidden;
+/* Carrito */
+.carrito-mensaje{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+align-items: center;
+display: none;
 }
-
-.card-body a:hover {
-  background-color: #e67e22;
-  border: 1px solid black;
-  color: white;
-}
-
-.producto:hover{
-  border-color: azure; /* Ver efecto y sombra */
-}
-/* Precio Regular */
-.precio {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1.2rem;
-  color: gray;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* Descuento */
-.descuento_producto {
+.container-carrito{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.productos-listado{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.productos-elegido{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: #dfe6e9 solid 2px;
+  border-radius: 10px;
+  padding-right: 2rem;  
+}
+.img-carrito-producto{
+  max-width: 6rem;  
+}
+.botones-carrito-acciones{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;  
+}
+.acceiones-de{
+display: flex;
+gap: 3rem;
+justify-content: space-between;
+}
+.acciones{
+  display: flex;
+  text-align: center;  
+  gap: 1rem;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 35px;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  margin: 5px;
-  background-color: rgb(24, 214, 7);
 }
-
-/* Fila de Productos */
-.fila_productos {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 /* Footer */
 footer {
   background-color: #e8e8e8;
@@ -124,60 +152,8 @@ footer {
   margin-top: 30px;
 }
 
-/* Login */
-.login{
-  display: flex;
-  flex-direction: column;
-  background-color: #4b4b4b;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 400px;  
-  border-radius: 10px;
-  color: white;
-}
-
-/* Link Crear Cuenta */
-.crear_cuenta a{
-  text-decoration: none;
-  color: white;
-}
-
-.crear_cuenta a i{
-  text-decoration: none;
-  color: white;
-}
-
-/* Boton Ingresar */
-.btn_ingresar {
-  color: white;
-  background-color: #67304a;
-  border: 1px solid black;
-  padding: 10px;
-  font-weight: bold;
-  overflow: hidden;  
-  border-radius: 5px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-/* Container Formulario Login y Registro */
-.box_login{
-  height: 95%;  
-}
-/* Formulario de Crear una Cuenta */
-.registro{
-  display: flex;
-  flex-direction: column;
-  background-color: #4b4b4b;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 500px;  
-  border-radius: 10px;
-  color: white;
+.disabled {
+  display: none;
 }
 
 /*Media queries Mobile*/
@@ -190,22 +166,12 @@ footer {
   }
   .copyright {
     font-size: 12px;
-  }
-
-  .card{
-    margin-bottom: 10px;
-  }
-
-  
+  }  
 }
 
 /*Media queries Tablets*/
 @media only screen and (max-width: 1024px) {
   .copyright {
     font-size: 12px;
-  }
-
-  .card{
-    margin-bottom: 10px;
-  }
+  } 
 }
